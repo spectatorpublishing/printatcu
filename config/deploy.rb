@@ -5,9 +5,9 @@ require "mina/rvm"
 
 set :user, "deploy"
 set :domain, "162.243.219.89"
-set :deploy_to, "/var/www/printatcu"
+set :deploy_to, "/var/www/printatcu-alt"
 set :repository, "https://github.com/spectatorpublishing/printatcu.git"
-set :branch, "master"
+set :branch, "alt"
 
 set :shared_paths, ["config/database.yml", "log", "public/uploads", "tmp/pids", "tmp/sockets"]
 

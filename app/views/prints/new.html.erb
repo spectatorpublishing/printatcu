@@ -1,10 +1,104 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
-      <iframe width="853" height="480" src="//www.youtube.com/embed/5LGEiIL1__s" frameborder="0" allowfullscreen></iframe>
+    <% if flash[:printer] && flash[:user] %>
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= t("success.html", :count => flash[:count], :printer => flash[:printer], :user => flash[:user]) %>
+      </div>
+    <% elsif @print.errors.any? %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong><%= t(:something_bad_happened) %></strong>
+        <ul>
+          <% @print.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div id="fake-porn" class="col-md-9">
+      <div class="video-holder">
+        
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Alma Mater in her first outdoors scene!</h1>
+        </div>
+
+        <div class="col-md-4">
+          <p>1,180 Views</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width: 90%">
+              <span class="sr-only">90% Complete (success)</span>
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width: 10%">
+              <span class="sr-only">10% Complete (danger)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-6">
+              <span class="glyphicon glyphicon-thumbs-up"></span> Like
+            </div>
+            <div class="col-md-3">
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+            </div>
+            <div class="col-md-3">
+              <span class="glyphicon glyphicon-heart"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <span class="glyphicon glyphicon-info-sign"></span> About
+        </div>
+        <div class="col-md-3">
+          <span class="glyphicon glyphicon-share-alt"></span> Share
+        </div>
+        <div class="col-md-3">
+          <span class="glyphicon glyphicon-cloud-download"></span> Download
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Comments:</h3>
+        <div class="media">
+          <a class="pull-left" href="#">
+            <%= image_tag "crown.jpg", :class => "media-object", style: "width: 64px; height: 64px;" %>
+          </a>
+
+          <div class="media-body">
+            <h4 class="media-heading">Porn@CU says:</h4>
+            Not quite my cup of tea but an excellent performance nontheless.
+          </div>
+        </div>
+
+
+      </div>
+
+
     </div>
 
     <div id="area" class="col-md-3">
+      <div class="row">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><%= image_tag "Ad1.png", :class => "img-responsive" %></a>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <a href="https://www.youtube.com/watch?v=HVUX33moraU"><%= image_tag "Ad2.png", :class => "img-responsive" %></a>
+      </div>
+
+      <hr>
+
       <%= form_for @print do |f| %>
         <div class="row">
           <h5>Building</h5>

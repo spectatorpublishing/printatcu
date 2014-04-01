@@ -9,6 +9,7 @@
 //= require cookie
 //= require select2
 //= require bootstrap
+//= require sugar
 //= require_tree .
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

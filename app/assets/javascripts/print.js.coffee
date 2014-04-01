@@ -27,6 +27,10 @@ $(document).ready ->
         
   building.change (event) -> change_printers(event.val)
 
+  video = ['WsBB93IqJkE'].sample()
+
+  $(".video-holder").html("<iframe class=\"video\" height=\"480\" src=\"//www.youtube.com/embed/#{video}\" frameborder=\"0\" allowfullscreen></iframe>")
+
   # if !defaults && (p = $.cookie("printer")) && (b = $.cookie("building"))
   #   building.select2("val", b)
   #   change_printers(b)
